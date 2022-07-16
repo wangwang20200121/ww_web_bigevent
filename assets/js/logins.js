@@ -31,7 +31,7 @@ $(function () {
     // 阻止默认提交事件;
     e.preventDefault();
     $.post(
-      "api/reguser",
+      "http://127.0.0.1:3001/api/reguser",
       {
         username: $("#form-reg [name=username]").val(),
         password: $("#form-reg [name=password]").val(),
@@ -54,7 +54,7 @@ $(function () {
   });
   // 登录
   $("#form-login").submit(function (e) {
-    const url = "/api/login";
+    const url = "http://127.0.0.1:3001/api/login";
     e.preventDefault();
     $.ajax({
       type: "POST",
@@ -70,7 +70,9 @@ $(function () {
         }
         layer.msg(response.message, { icon: 1 });
         // 保存token到本地存储
+        console.log(response);
         localStorage.setItem("token", response.token);
+        // localStorage.setItem("userid", response.uid);
         // 清空表单
         $("#form-login")[0].reset();
         // 登录成功后，跳转到首页;
