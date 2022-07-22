@@ -1,0 +1,12 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 10px;
+  background-color: #e8f0e9;
+}
+.layui-input {
+  width: 500px;
+}

@@ -3,7 +3,6 @@ $(function () {
   getUserInfo();
   // 退出登录
   $("#btnLogout").on("click", function () {
-    console.log(1);
     //eg1
     layer.confirm(
       "确定退出登录?",
@@ -17,7 +16,6 @@ $(function () {
     );
   });
 });
-const layer = layui.layer;
 
 function getUserInfo() {
   $.ajax({
@@ -45,7 +43,7 @@ function getUserInfo() {
 }
 // 渲染头像
 function renderAvstar(user) {
-  var name = user.username || user.nickname;
+  var name = user.nickname || user.username;
   $(".welcome").html(`欢迎&nbsp ${name}`);
   if (user.user_pic !== null) {
     $(".userinfo [name=imgs]").attr("src", user.user_pic).show();

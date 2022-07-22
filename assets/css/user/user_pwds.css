@@ -1,0 +1,14 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 10px;
+  background: #e8f0e9;
+}
+.layui-input,
+.layui-textarea,
+input {
+  width: 500px;
+}
